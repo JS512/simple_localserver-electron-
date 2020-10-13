@@ -1,0 +1,52 @@
+<!Doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+
+<body>
+    <button id="openBrowser" onclick="openBrowser()" disabled="disabled">브라우저 띄우기</button>
+    <button id="loadConfig" onclick="loadConfig()">설정 불러오기</button>
+    <button id="saveConfig" onclick="saveConfig()">설정 저장</button>
+    <div>
+        <span>서버 상태 :</span>
+        <div class="onoffswitch" style="display:inline-block">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="serverControl" tabindex="0">
+            <label class="onoffswitch-label" for="serverControl">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+        </div>        
+    </div>
+
+    <div id="errMsg"></div>
+
+    <div>
+        포트 번호 :
+        <input id="portNum" type="number" min="0" max="55555">
+    </div>
+    
+    <div>
+        폴더 경로 :
+        <input id="filePath" class="width-dynamic proba dva" type="text">
+        <div style="font-size: small;">css, js 파일은 css, js 폴더밑에 넣어주세요.</div>
+    </div>
+
+    <div>
+        다른 리소스 경로 :
+        <input type="text" id="resourcePath">
+        <div style="font-size: small;">현재 폴더 기준 작성 
+            <span style="color:red">ex) /image, /music, ... </span>
+        </div>
+        <div id="fileFind"></div>
+    </div>
+</body>
+<script>
+
+</script>
+<script src="./render.js"></script>
+
+</html>

@@ -1,0 +1,83 @@
+{
+  "name": "nodejsunixcommand",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {    
+    "build:osx": "electron-builder --mac",
+    "build:linux": "npm run build:linux32 && npm run build:linux64",
+    "build:linux32": "electron-builder --linux --ia32",
+    "build:linux64": "electron-builder --linux --x64",
+    "build:win": "npm run build:win32 && npm run build:win64",
+    "build:win32": "electron-builder --win --ia32",
+    "build:win64": "electron-builder --win --x64"    
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^10.1.2",
+    "electron-builder": "^22.8.1",
+    "electron-reload": "^1.5.0"
+  },
+  "dependencies": {
+    "dialog": "^0.3.1",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "js-yaml": "^3.14.0",
+    "open": "^7.2.1",
+    "opn": "^6.0.0"
+  },
+  "build": {
+    "productName": "productTest", 
+    "appId": "kr.co.productTest.www", 
+    "asar": true, 
+    "protocols": {
+         "name": "productTest",
+         "schemes": [
+              "productTest"
+         ]
+    },
+    "mac": { 
+         "target": [
+              "default"
+         ],
+         "icon": "./electron-root/favicon.ico"
+    },
+    "dmg": { 
+         "title": "tournant",
+         "icon": "./electron-root/favicon.ico"
+    },
+    "win": { 
+        "target": [
+              "zip",
+              "nsis"
+         ],
+         "icon": "./electron-root/favicon.ico"
+    },
+    "linux": { 
+         "target": [
+               "AppImage",
+               "deb",
+               "rpm",
+               "zip",
+               "tar.gz"
+         ],
+         "icon": "./electron-root/favicon.ico"
+    },
+    "nsis": {
+         "oneClick": false, 
+         "allowToChangeInstallationDirectory": false, 
+         "installerLanguages": [
+              "en_US",
+              "ko_KR"
+         ],
+         "language": "1042"
+    },
+    "directories": {
+         "buildResources": "resources/installer/",
+         "output": "build/", 
+         "app": "."
+    }
+  }
+
+}

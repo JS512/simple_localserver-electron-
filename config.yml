@@ -1,0 +1,7 @@
+port: '3000'
+file: 'D:\workspace\electron\nodejsUnixTest'
+src:
+  - /image
+  - ' /music'
+  - ' /test'
+  - ' mosmefi'
